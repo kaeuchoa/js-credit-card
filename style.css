@@ -1,5 +1,6 @@
 :root {
     --light-grey: #eee;
+    --primary-color: #2196f3;
 
     --container-sm-width: 500px;
     --container-md-width: 800px;
@@ -10,7 +11,7 @@
 
     --default-border-radius: 5px;
     /* Min-height considered for mobile confortable clicks */
-    --form-elements-height: 32px;
+    --min-clickable-height: 32px;
 }
 
 body {
@@ -46,12 +47,33 @@ body {
 }
 
 .input-group input,
-.input-group select {
+.input-group select,
+.btn {
     border: 1px solid #a3a3a3;
     border-radius: var(--default-border-radius);
     font-size: 1.1rem;
-    min-height: var(--form-elements-height);
-    padding:0  var(--sm-spacing);
+    min-height: var(--min-clickable-height);
+    padding: 0 var(--sm-spacing);
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    box-shadow: 0px 0px 5px 0px var(--primary-color);
+}
+
+.btn {
+    text-transform: uppercase;
+    border: none;
+}
+
+.btn--confirm {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn--block {
+    display: block;
+    width: 100%;
 }
 
 @media screen and (min-width: 576px) {
