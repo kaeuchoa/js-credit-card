@@ -4,6 +4,10 @@
     --container-sm-width: 500px;
     --container-md-width: 800px;
     --container-lg-width: 1000px;
+
+    --default-spacing: 20px;
+
+    --default-border-radius: 5px;
 }
 
 body {
@@ -13,12 +17,20 @@ body {
 
 /* Remember! Mobile First */
 .container {
+    background-color: lightskyblue;
     margin: auto;
     max-width: var(--container-sm-width);
     min-height: 200px;
     width: 100%;
 }
 
+.form-container {
+    background-color: #fff;
+    border-radius: var(--default-border-radius);
+    margin: auto;
+    max-width: 100%;
+    padding: var(--default-spacing) calc(var(--default-spacing)/2);
+}
 
 @media screen and (min-width: 576px) {
     .container {
@@ -32,10 +44,19 @@ body {
         background-color: lightgreen;
         max-width: var(--container-lg-width);
     }
+
+    .form-container {
+        max-width: 80%;
+        padding: calc(var(--default-spacing)*1.5) var(--default-spacing);
+    }
 }
 
 @media screen and (min-width: 1024px) {
     .container {
         background-color: lightsalmon;
+    }
+
+    .form-container {
+        max-width: 70%;
     }
 }
