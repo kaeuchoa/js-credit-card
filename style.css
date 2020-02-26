@@ -13,7 +13,6 @@ body {
 
 /* Remember! Mobile First */
 .container {
-    background-color: red;
     margin: auto;
     max-width: var(--container-sm-width);
     min-height: 200px;
