@@ -1,3 +1,42 @@
+:root {
+    --light-grey: #eee;
+
+    --container-sm-width: 500px;
+    --container-md-width: 800px;
+    --container-lg-width: 1000px;
+}
+
 body {
-    background-color: #eee;
+    background-color: var(--light-grey);
+}
+
+
+/* Remember! Mobile First */
+.container {
+    background-color: red;
+    margin: auto;
+    max-width: var(--container-sm-width);
+    min-height: 200px;
+    width: 100%;
+}
+
+
+@media screen and (min-width: 576px) {
+    .container {
+        background-color: lightblue;
+        max-width: var(--container-md-width);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        background-color: lightgreen;
+        max-width: var(--container-lg-width);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        background-color: lightsalmon;
+    }
 }
