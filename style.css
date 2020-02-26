@@ -6,12 +6,17 @@
     --container-lg-width: 1000px;
 
     --default-spacing: 20px;
+    --sm-spacing: calc(var(--default-spacing)/2);
 
     --default-border-radius: 5px;
+    /* Min-height considered for mobile confortable clicks */
+    --form-elements-height: 32px;
 }
 
 body {
     background-color: var(--light-grey);
+    font-size: 14px;
+    font-family: sans-serif;
 }
 
 
@@ -30,6 +35,23 @@ body {
     margin: auto;
     max-width: 100%;
     padding: var(--default-spacing) calc(var(--default-spacing)/2);
+}
+
+.input-group:not(:last-child) {
+    margin: 0 0 var(--sm-spacing) 0;
+}
+
+.input-group label {
+    display: block;
+}
+
+.input-group input,
+.input-group select {
+    border: 1px solid #a3a3a3;
+    border-radius: var(--default-border-radius);
+    font-size: 1.1rem;
+    min-height: var(--form-elements-height);
+    padding:0  var(--sm-spacing);
 }
 
 @media screen and (min-width: 576px) {
