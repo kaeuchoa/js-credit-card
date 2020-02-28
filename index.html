@@ -10,45 +10,48 @@
 <body>
     <main class="container">
         <section id="card">
-            <div class="card__front">
-                <div class="card-header">
-                    <span class="card__seal"></span>
-                    <span class="card__flag"></span>
-                </div>
-                <div class="card__number">
-                    <span class="card__number__group">####</span>
-                    <span class="card__number__group">####</span>
-                    <span class="card__number__group">####</span>
-                    <span class="card__number__group">####</span>
-                </div>
-                <div class="card-footer">
-                    <!-- Semanticaly how would this be labeled? -->
-                    <div class="card__data">
-                        <p>Card Holder</p>
-                        <p>Place Holder Name</p>
+            <div class="card">
+                <div class="card__front">
+                    <div class="card-header">
+                        <span class="card__seal"></span>
+                        <span class="card__flag"></span>
                     </div>
-                    <div class="card__data">
-                        <p>Expires</p>
-                        <p>MM/YYYY</p>
+                    <div class="card__number">
+                        <span class="card__number__group">####</span>
+                        <span class="card__number__group">####</span>
+                        <span class="card__number__group">####</span>
+                        <span class="card__number__group">####</span>
                     </div>
+                    <div class="card-footer">
+                        <!-- Semanticaly how would this be labeled? -->
+                        <div class="card__data">
+                            <p class="card__label">Card Holder</p>
+                            <p>Place Holder Name</p>
+                        </div>
+                        <div class="card__data">
+                            <p class="card__label">Expires</p>
+                            <p>MM/YYYY</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card__back">
+                    <div class="card-header">
+                        <span class="card__swipe">
+                        </span>
+                    </div>
+    
+                    <div class="card__security">
+                        <p>CVV</p>
+                        <p>###</p>
+                    </div>
+    
+                    <div class="card-footer">
+                        <span class="card__flag"></span>
+                    </div>
+    
                 </div>
             </div>
-            <div class="card__back">
-                <div class="card-header">
-                    <span class="card__swipe">
-                    </span>
-                </div>
-
-                <div class="card__security">
-                    <p>CVV</p>
-                    <p>###</p>
-                </div>
-
-                <div class="card-footer">
-                    <span class="card__flag"></span>
-                </div>
-
-            </div>
+            
         </section>
 
         <section id="form">

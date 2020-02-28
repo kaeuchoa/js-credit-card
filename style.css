@@ -8,6 +8,7 @@
 
     --default-spacing: 20px;
     --sm-spacing: calc(var(--default-spacing)/2);
+    --lg-spacing: calc(var(--default-spacing)*2);
 
     --default-border-radius: 5px;
     /* Min-height considered for mobile confortable clicks */
@@ -27,6 +28,7 @@ body {
     margin: auto;
     max-width: var(--container-sm-width);
     min-height: 200px;
+    position: relative;
     width: 100%;
 }
 
@@ -76,6 +78,89 @@ body {
     width: 100%;
 }
 
+/* place holders */
+p {
+    margin: 0;
+}
+
+.card__seal,
+.card__flag {
+    background-color: #fff;
+    height: 30px;
+    width: 50px;
+}
+
+.card {
+    height: 200px;
+    margin: auto;
+    position: relative;
+    top: calc(var(--lg-spacing)*2);
+    width: 350px;
+}
+
+.card,
+.card-header,
+.card-footer,
+.card__front,
+.card__back,
+.card__data {
+    display: flex;
+}
+
+
+.card-header,
+.card-footer {
+    flex-grow: 1;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.card-header {
+    align-self: flex-start;
+}
+
+.card-footer,
+.card__data {
+    align-self: flex-end;
+}
+
+.card__front,
+.card__back {
+    background-color: rgb(87, 87, 180);
+    border-radius: var(--default-border-radius);
+    box-sizing: border-box;
+    color: #fff;
+    flex-direction: column;
+    height: 100%;
+    margin-bottom: var(--sm-spacing);
+    padding: var(--default-spacing);
+    position: absolute;
+    width: 100%;
+}
+
+.card__front {
+    z-index: 2;
+}
+
+.card__number {
+    border: 1px solid #fff;
+    border-radius: var(--default-border-radius);
+    padding: var(--sm-spacing);
+}
+
+.card__data {
+    flex-direction: column;
+}
+
+.card__label {
+    font-size: .75rem;
+    margin: .2rem 0;
+}
+
+.card__back {
+    z-index: 0;
+}
+
 @media screen and (min-width: 576px) {
     .container {
         background-color: lightblue;
@@ -91,7 +176,7 @@ body {
 
     .form-container {
         max-width: 80%;
-        padding: calc(var(--default-spacing)*1.5) var(--default-spacing);
+        padding: calc(var(--lg-spacing)*3) var(--default-spacing) var(--default-spacing) calc(var(--default-spacing)/2);
     }
 }
 
