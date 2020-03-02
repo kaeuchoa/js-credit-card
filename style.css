@@ -37,7 +37,7 @@ body {
     border-radius: var(--default-border-radius);
     margin: auto;
     max-width: 100%;
-    padding: var(--default-spacing) calc(var(--default-spacing)/2);
+    padding: calc(var(--lg-spacing)*3) var(--default-spacing) var(--default-spacing) calc(var(--default-spacing)/2);
 }
 
 .input-group:not(:last-child) {
@@ -176,7 +176,6 @@ p {
 
     .form-container {
         max-width: 80%;
-        padding: calc(var(--lg-spacing)*3) var(--default-spacing) var(--default-spacing) calc(var(--default-spacing)/2);
     }
 }
 
