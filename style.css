@@ -100,7 +100,7 @@ p {
 }
 
 .card {
-    height: 200px;
+    height: 220px;
     margin: auto;
     position: relative;
     top: calc(var(--lg-spacing)*2);
