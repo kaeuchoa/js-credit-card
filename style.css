@@ -158,7 +158,16 @@ p {
 }
 
 .card__back {
-    z-index: 0;
+    z-index: 5;
+}
+
+.card__swipe {
+    background-color: #000;
+    width: 100%;
+    position: absolute;
+    min-height: var(--min-clickable-height);
+    top: var(--default-spacing);
+    left: 0;
 }
 
 @media screen and (min-width: 576px) {
