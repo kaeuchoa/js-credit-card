@@ -32,7 +32,7 @@ select:focus {
 
 /* Remember! Mobile First */
 .container {
-    background-color: lightskyblue;
+    /* background-color: lightskyblue; */
     margin: auto;
     max-width: var(--container-sm-width);
     min-height: 200px;
@@ -194,7 +194,7 @@ p {
 }
 
 .card__back {
-    z-index: 0;
+    z-index: 5;
 }
 
 .card__back .card-footer {
@@ -232,14 +232,14 @@ p {
 
 @media screen and (min-width: 576px) {
     .container {
-        background-color: lightblue;
+        /* background-color: lightblue; */
         max-width: var(--container-md-width);
     }
 }
 
 @media screen and (min-width: 768px) {
     .container {
-        background-color: lightgreen;
+        /* background-color: lightgreen; */
         max-width: var(--container-lg-width);
     }
 
@@ -250,7 +250,7 @@ p {
 
 @media screen and (min-width: 1024px) {
     .container {
-        background-color: lightsalmon;
+        /* background-color: lightsalmon; */
     }
 
     .form-container {
