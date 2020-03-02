@@ -158,7 +158,12 @@ p {
 }
 
 .card__back {
-    z-index: 5;
+    z-index: 0;
+}
+
+.card__back .card-footer {
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .card__data.card__security {
