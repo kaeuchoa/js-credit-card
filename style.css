@@ -46,7 +46,8 @@ select:focus {
     box-shadow: var(--default-box-shadow);
     margin: auto;
     max-width: 100%;
-    padding: calc(var(--lg-spacing)*3) var(--default-spacing) var(--default-spacing) calc(var(--default-spacing)/2);
+    padding: calc(var(--lg-spacing)*3) var(--default-spacing)  calc(var(--default-spacing)) var(--default-spacing);
+    position: relative;
 }
 
 .input-group:not(:last-child) {
@@ -62,6 +63,7 @@ select:focus {
 .btn {
     border-radius: var(--default-border-radius);
     border: 1px solid #a3a3a3;
+    box-sizing: border-box;
     font-size: 1.1rem;
     min-height: var(--min-clickable-height);
     padding: 0 var(--sm-spacing);
@@ -70,6 +72,28 @@ select:focus {
 .input-group input:focus,
 .input-group select:focus {
     box-shadow: 0px 0px 5px 0px var(--primary-color);
+}
+
+.input--block {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.input-group--inline {
+    display: inline-block;
+}
+
+.form__exp-date {
+    width: 50%;
+}
+
+.form__exp-date select {
+    width: 49%;
+    background-color: #fff;
+}
+
+.form__security-number {
+    float: right;
 }
 
 .btn {
