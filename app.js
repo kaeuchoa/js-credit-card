@@ -10,7 +10,7 @@ const cardFactory = (function(){
     }
 
     function flipCard(){
-        console.log(_card);
+        _card.element.classList.toggle('is-flipped');
     }
 
     return {
