@@ -30,7 +30,9 @@
                         </div>
                         <div class="card__data">
                             <p class="card__label">Expires</p>
-                            <p>MM/YYYY</p>
+                            <div>
+                                <span data-input-bind="expirationMonth">MM</span>/<span data-input-bind="expirationYear">YYYY</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -42,7 +44,7 @@
     
                     <div class="card__data card__security">
                         <p class="card__label">CVV</p>
-                        <p class="card__security__number">***</p>
+                        <p class="card__security__number" data-input-bind="securityNumber">***</p>
                     </div>
     
                     <div class="card-footer">
@@ -73,16 +75,19 @@
                     <label for="expiration-date-month expiration-date-year">Expiration Date</label>
                     <select name="expiration-date-month" id="expiration-date-month">
                         <option value="">Month</option>
+                        <option value="01">Jan</option>
                     </select>
                     <select name="expiration-date-year" id="expiration-date-year">
                         <option value="">Year</option>
+                        <option value="2020">2020</option>
+
                     </select>
                 </div>
 
                 <!-- Security Number Group -->
                 <div class="input-group input-group--inline form__security-number">
                     <label for="security-number">CVV</label>
-                    <input type="text" name="security-number" id="security-number">
+                    <input type="text" name="security-number" id="security-number" maxlength="3">
                 </div>
 
                 <input type="submit" class="btn btn--confirm btn--block" value="submit">
