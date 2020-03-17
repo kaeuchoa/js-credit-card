@@ -2,15 +2,16 @@ const CardView = (function(){
     let _view = {
         init: function() {
             this.element = document.querySelector(".js-card");
+            this.focusBox = this.element.querySelector(".js-focusBox");
             return this;
         },
 
         bindModel: function (cardModel) {
-            let view = this;
+            // como manter o contexto do this nesse caso??
             let handler = {
                 set(target, property, value) {
                     target[property] = value;
-                    let field = view.element.querySelector(`[data-input-bind="${property}"]`);
+                    let field = _view.element.querySelector(`[data-input-bind="${property}"]`);
                     field.innerHTML = value;
                     return true;
                 }
@@ -20,6 +21,20 @@ const CardView = (function(){
 
         flipCard: function(){
             _view.element.classList.toggle('is-flipped');
+        },
+
+        moveFocusBox: function(){
+            let field = event.target || event.srcElement,
+                fieldName = field.getAttribute("name");
+
+            let focusTarget = document.querySelector(`[data-focus-target="${fieldName}"]`);
+
+            this.focusBox.style.display = "block";
+            this.focusBox.style.width = `${focusTarget.offsetWidth + 10}px`;
+            this.focusBox.style.height = `${focusTarget.offsetHeight + 10}px`;
+            this.focusBox.style.top = `${focusTarget.offsetTop - 5}px`;
+            this.focusBox.style.left = `${focusTarget.offsetLeft - 5}px`;
+
         }
 
     };
@@ -68,7 +83,26 @@ const app = (function(){
             card.securityNumber = inputSecurityNumber.value;
         });
 
-        inputSecurityNumber.addEventListener("focus", cardView.flipCard);
+        inputNumber.addEventListener("focus", function(){
+            cardView.moveFocusBox();
+        });
+
+        inputHolder.addEventListener("focus", function(){
+            cardView.moveFocusBox();
+        });
+
+        selectMonth.addEventListener("focus", function(){
+            cardView.moveFocusBox();
+        });
+
+        selectYear.addEventListener("focus", function(){
+            cardView.moveFocusBox();
+        });
+
+        inputSecurityNumber.addEventListener("focus", function() {
+            cardView.flipCard();
+            cardView.moveFocusBox();
+        });
         inputSecurityNumber.addEventListener("blur", cardView.flipCard);
     }
 
@@ -77,5 +111,6 @@ const app = (function(){
     }
 })(CardView);
 
+// TODO, criar init form baseado no input type, fazer add event listener com as ações
 
 app.init();

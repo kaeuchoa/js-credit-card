@@ -11,12 +11,15 @@
     <main class="container">
         <section id="card">
             <div class="card js-card">
+                <div id="card-focus" class="card--overlay">
+                    <div class="card--focus js-focusBox"></div>
+                </div>
                 <div class="card__front">
                     <div class="card-header">
                         <span class="card__seal"></span>
                         <span class="card__flag"></span>
                     </div>
-                    <div class="card__number" data-input-bind="number">
+                    <div class="card__number" data-input-bind="number" data-focus-target="card-number">
                         <span class="card__number__group">####</span>
                         <span class="card__number__group">####</span>
                         <span class="card__number__group">####</span>
@@ -26,12 +29,13 @@
                         <!-- Semanticaly how would this be labeled? -->
                         <div class="card__data">
                             <p class="card__label">Card Holder</p>
-                            <p data-input-bind="holder">Place Holder Name</p>
+                            <p data-input-bind="holder" data-focus-target="card-holder">Place Holder Name</p>
                         </div>
                         <div class="card__data">
                             <p class="card__label">Expires</p>
                             <div>
-                                <span data-input-bind="expirationMonth">MM</span>/<span data-input-bind="expirationYear">YYYY</span>
+                                <span data-input-bind="expirationMonth" data-focus-target="expiration-date-month">MM</span>/
+                                <span data-input-bind="expirationYear" data-focus-target="expiration-date-year">YYYY</span>
                             </div>
                         </div>
                     </div>
@@ -44,7 +48,7 @@
     
                     <div class="card__data card__security">
                         <p class="card__label">CVV</p>
-                        <p class="card__security__number" data-input-bind="securityNumber">***</p>
+                        <p class="card__security__number" data-input-bind="securityNumber" data-focus-target="security-number">***</p>
                     </div>
     
                     <div class="card-footer">
@@ -61,7 +65,7 @@
                 <!-- Card Number Group -->
                 <div class="input-group">
                     <label for="card-number">Card Number</label>
-                    <input type="text" name="card-number" class="input--block" id="card-number">
+                    <input type="number" name="card-number" class="input--block" id="card-number">
                 </div>
 
                 <!-- Card Name Group -->
@@ -87,7 +91,7 @@
                 <!-- Security Number Group -->
                 <div class="input-group input-group--inline form__security-number">
                     <label for="security-number">CVV</label>
-                    <input type="text" name="security-number" id="security-number" maxlength="3">
+                    <input type="number" name="security-number" id="security-number" maxlength="3">
                 </div>
 
                 <input type="submit" class="btn btn--confirm btn--block" value="submit">

@@ -8,6 +8,7 @@
 
     --default-spacing: 20px;
     --sm-spacing: calc(var(--default-spacing)/2);
+    --xs-spacing: calc(var(--sm-spacing)/2);
     --lg-spacing: calc(var(--default-spacing)*2);
 
     --default-border-radius: 5px;
@@ -32,7 +33,6 @@ select:focus {
 
 /* Remember! Mobile First */
 .container {
-    /* background-color: lightskyblue; */
     margin: auto;
     max-width: var(--container-sm-width);
     min-height: 200px;
@@ -124,15 +124,42 @@ p {
 }
 
 .card {
+    border-radius: var(--default-border-radius);
+    box-shadow: var(--default-box-shadow);
     height: 220px;
     margin: auto;
     position: relative;
     top: calc(var(--lg-spacing)*2);
-    width: 350px;
-    transition: transform .8s;
     transform-style: preserve-3d;
-    box-shadow: var(--default-box-shadow);
+    transition: transform .8s;
+    width: 350px;
     z-index: 2;
+}
+
+.card--overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(255,255,255, .4); */
+    box-shadow: var(--default-box-shadow);
+    z-index: 8;
+    /* display: none; */
+}
+
+.card--focus {
+    border-radius: var(--default-border-radius);
+    border: #fff solid 1px;
+    box-shadow: var(--default-box-shadow);
+    box-sizing: border-box;
+    display: none;
+    height: 1px;
+    left: 0;
+    padding: 3px;
+    position: absolute;
+    top: 0;
+    transition: all .3s ease-in;
+    width: 1px;
+    z-index: 9;
 }
 
 .card.is-flipped {
@@ -168,10 +195,10 @@ p {
 .card__back {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    background: -webkit-linear-gradient(to right, #4389A2, #5C258D); 
-    background: #5C258D;  
+    background: -webkit-linear-gradient(to right, #4389A2, #5C258D);
+    background: #5C258D;
     background: linear-gradient(to right, #4389A2, #5C258D);
-    border-radius: var(--default-border-radius);
+    border-radius: inherit;
     box-sizing: border-box;
     color: #fff;
     flex-direction: column;
@@ -192,8 +219,6 @@ p {
 }
 
 .card__number {
-    border-radius: var(--default-border-radius);
-    border: 1px solid #fff;
     padding: var(--sm-spacing);
 }
 
@@ -237,14 +262,12 @@ p {
 
 @media screen and (min-width: 576px) {
     .container {
-        /* background-color: lightblue; */
         max-width: var(--container-md-width);
     }
 }
 
 @media screen and (min-width: 768px) {
     .container {
-        /* background-color: lightgreen; */
         max-width: var(--container-lg-width);
     }
 
@@ -254,10 +277,6 @@ p {
 }
 
 @media screen and (min-width: 1024px) {
-    .container {
-        /* background-color: lightsalmon; */
-    }
-
     .form-container {
         max-width: 50%;
     }
