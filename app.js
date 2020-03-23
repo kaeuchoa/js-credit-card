@@ -42,18 +42,20 @@ const CardView = (function(){
     return _view;
 })();
 
-
-const app = (function(){
-    let card = {
-        number: "####-####-####-####",
+const CardModel = () => {
+    const _card = {
+        number: "",
         holder: "",
         securityNumber: "",
-        expirationMonth: "MM",
-        expirationYear: "YYYY"
-    };
+        expirationMonth: "",
+        expirationYear: ""
+    }
+    return  _card;
+}
 
+const app = (function(){
+    let card = CardModel();
     let cardView = {};
-
     function initApp() {
         cardView = CardView.init();
         card = cardView.bindModel(card);
