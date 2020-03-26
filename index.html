@@ -19,7 +19,7 @@
                         <span class="card__seal"></span>
                         <span class="card__flag"></span>
                     </div>
-                    <div class="card__number" data-input-bind="number" data-focus-target="card-number">
+                    <div class="card__number place-holder" data-input-bind="number" data-place-holder="#### #### #### ####" data-focus-target="card-number">
                         <span class="card__number__group">####</span>
                         <span class="card__number__group">####</span>
                         <span class="card__number__group">####</span>
@@ -29,13 +29,13 @@
                         <!-- Semanticaly how would this be labeled? -->
                         <div class="card__data">
                             <p class="card__label">Card Holder</p>
-                            <p data-input-bind="holder" data-focus-target="card-holder">Place Holder Name</p>
+                            <p class="place-holder" data-input-bind="holder" data-focus-target="card-holder" data-place-holder="Place Holder Name" >Place Holder Name</p>
                         </div>
                         <div class="card__data">
                             <p class="card__label">Expires</p>
                             <div>
-                                <span data-input-bind="expirationMonth" data-focus-target="expiration-date-month">MM</span>/
-                                <span data-input-bind="expirationYear" data-focus-target="expiration-date-year">YYYY</span>
+                                <span class="place-holder" data-input-bind="expirationMonth" data-focus-target="expiration-date-month" data-place-holder="MM">MM</span>/
+                                <span class="place-holder" data-input-bind="expirationYear" data-focus-target="expiration-date-year" data-place-holder="YYYY">YYYY</span>
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
     
                     <div class="card__data card__security">
                         <p class="card__label">CVV</p>
-                        <p class="card__security__number" data-input-bind="securityNumber" data-focus-target="security-number">***</p>
+                        <p class="card__security__number place-holder" data-input-bind="securityNumber" data-focus-target="security-number" data-place-holder="***">***</p>
                     </div>
     
                     <div class="card-footer">

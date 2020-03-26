@@ -1,4 +1,4 @@
-const CardView = (function(){
+const CardView = function(){
     let _view = {
         init: function() {
             this.element = document.querySelector(".js-card");
@@ -6,17 +6,15 @@ const CardView = (function(){
             return this;
         },
 
-        bindModel: function (cardModel) {
-            // como manter o contexto do this nesse caso??
-            let handler = {
-                set(target, property, value) {
-                    target[property] = value;
-                    let field = _view.element.querySelector(`[data-input-bind="${property}"]`);
-                    field.innerHTML = value;
-                    return true;
-                }
-            };
-            return new Proxy(cardModel, handler);
+        update: function (property, value) {
+            let field = this.element.querySelector(`[data-input-bind="${property}"]`);
+            if (value === "") {
+                field.innerHTML = field.dataset.placeHolder;
+                field.classList.add("place-holder");
+                return;
+            }
+            field.classList.remove("place-holder");
+            field.innerHTML = value;
         },
 
         flipCard: function(){
@@ -39,8 +37,24 @@ const CardView = (function(){
 
     };
 
-    return _view;
-})();
+    return _view.init();
+};
+
+const Bind = function(model, view, ...properties){
+
+    const proxy = new Proxy(model, {
+        set(target, prop, value, receiver) {
+            const updated = Reflect.set(target, prop, value);
+            if (properties.includes(prop)) {
+                view.update(prop, value);
+            }
+            return updated;
+        }
+    })
+
+    return proxy;
+
+};
 
 const CardModel = () => {
     const _card = {
@@ -48,17 +62,20 @@ const CardModel = () => {
         holder: "",
         securityNumber: "",
         expirationMonth: "",
-        expirationYear: ""
+        expirationYear: "",
     }
     return  _card;
 }
 
 const app = (function(){
-    let card = CardModel();
-    let cardView = {};
+    let cardView = CardView();
+    let card = Bind(CardModel(), cardView, 
+                    "number", 
+                    "holder", 
+                    "securityNumber", 
+                    "expirationMonth", 
+                    "expirationYear");
     function initApp() {
-        cardView = CardView.init();
-        card = cardView.bindModel(card);
 
         let inputNumber = document.querySelector("#card-number");
         inputNumber.addEventListener("keyup", function(){
@@ -111,7 +128,7 @@ const app = (function(){
     return {
         init: initApp
     }
-})(CardView);
+})();
 
 // TODO, criar init form baseado no input type, fazer add event listener com as ações
 

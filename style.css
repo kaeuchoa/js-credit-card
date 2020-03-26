@@ -1,5 +1,6 @@
 :root {
     --light-grey: #eee;
+    --place-holder: #c3c3c3;
     --primary-color: #2196f3;
 
     --container-sm-width: 500px;
@@ -30,6 +31,11 @@ select:focus {
     box-shadow: none;
     outline: none;
 }
+
+.place-holder {
+    color: var(--place-holder);
+    background-color: rgba(125, 125, 125, 0.3);
+} 
 
 /* Remember! Mobile First */
 .container {
