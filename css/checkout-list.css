@@ -41,6 +41,11 @@
     margin-right: 5px;
 }
 
+.btn--icon-left i{
+    margin-right: 5px;
+    margin-left: 0;
+}
+
 .field__data {
     border-left: 1px #ccc dotted;
     display: flex;
