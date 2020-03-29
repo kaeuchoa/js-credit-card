@@ -83,9 +83,10 @@ select:focus {
 .btn {
     border: none;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
-.btn--confirm {
+.btn--primary {
     background-color: var(--primary-color);
     color: #fff;
 }
@@ -93,4 +94,17 @@ select:focus {
 .btn--block {
     display: block;
     width: 100%;
+}
+
+.btn i {
+    margin-left: 5px;
+}
+.btn--small {
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    font-size: 12px;
+    height: var(--min-clickable-height);
+    justify-content: space-around;
 }
