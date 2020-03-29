@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Credit Card App</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/utils.css">
     <link rel="stylesheet" href="css/card-form.css">
     <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/checkout-list.css">
 
     <script defer src="js/model/CardModel.js"></script>
     <script defer src="js/util/Bind.js"></script>
@@ -18,12 +22,35 @@
 </head>
 <body>
     <main class="container">
-        <div id="cart-list-container">
+        <div id="checkout-list-container">
 
-            <section id="cart-list">
+            <section id="checkout-list">
                 <div class="panel">
+                    <div class="checkout-img">
+                        <div class="img-placeholder"></div>
+                    </div>
+                    
+                    <h2 class="checkout-title">Summary</h2>
+
+                    <ul class="checkout-fields">
+                        <li class="checkout-field">
+                            <div class="field__title">
+                                <span class="field__icon">
+                                    <i class="fas fa-home"></i>
+                                </span>
+                                <h3>Address</h3>
+                            </div>
+
+                            <div class="field__data">
+                                <span  class="field__text">Some address here</span>
+                                <span class="btn field__edit" role="button">Edit <i class="fas fa-chevron-right field__icon"></i></span>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
+
+
 
             </section>
 
@@ -34,7 +61,7 @@
 
             <section id="card">
                 <div class="card js-card">
-                    <div id="card-focus" class="card--overlay">
+                    <div id="card-focus">
                         <div class="card--focus js-focusBox"></div>
                     </div>
                     <div class="card__front">

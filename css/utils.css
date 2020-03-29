@@ -4,6 +4,13 @@
     background-color: rgba(125, 125, 125, 0.3);
 } 
 
+.img-placeholder {
+    width: 100px; 
+    height: 100px; 
+    background-color: cornflowerblue;
+    margin: auto;
+}
+
 .panel {
     background-color: #fff;
     border-radius: var(--default-border-radius);
@@ -28,4 +35,10 @@
 .disabled .card__front,
 .disabled .card__back {
     background: var(--place-holder) !important;
+    box-shadow: none !important;
+}
+
+.disabled .panel,
+.disabled .card {
+    box-shadow: none!important;
 }

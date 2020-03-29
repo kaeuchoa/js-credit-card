@@ -1,0 +1,55 @@
+.checkout-img {
+    width: 100%;
+}
+
+.checkout-title {
+    text-align: center;
+    font-weight: 300;
+}
+
+.checkout-field:hover {
+    box-shadow: 0 0 10px 2px #00000036;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: .3s all ease;
+}
+
+.field__title h3 {
+    display: inline;
+}
+
+.field__icon {
+    margin-right: 5px;
+}
+
+.field__data {
+    border-left: 1px #ccc dotted;
+    display: flex;
+    margin: 10px 5px;
+    padding-left: 10px;
+    min-height: var(--min-clickable-height);
+    align-content: center;
+}
+
+.field__data .field__text {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+/*  Use btn class? */
+.field__edit {
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    font-size: 12px;
+    height: var(--min-clickable-height);
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.field__edit .field__icon {
+    margin-right: 0;
+    margin-left: 5px;
+}

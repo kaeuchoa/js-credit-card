@@ -19,7 +19,7 @@
         max-width: var(--container-lg-width);
     }
 
-    #cart-list-container, 
+    #checkout-list-container, 
     #form-container {
         display: inline-block;
         height: 100%;
