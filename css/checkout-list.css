@@ -4,7 +4,7 @@
 }
 
 .checkout-field--active {
-    box-shadow: 0 0 10px 2px var(--primary-color);
+    box-shadow: 0px 0px 5px 0px var(--primary-color);
     background-color: #fff !important;
     border-radius: var(--default-border-radius);
     padding: 0 5px 5px 5px;
