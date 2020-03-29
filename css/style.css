@@ -54,14 +54,34 @@ select:focus {
     width: 100%;
 }
 
-.form-container {
+.panel {
     background-color: #fff;
     border-radius: var(--default-border-radius);
     box-shadow: var(--default-box-shadow);
     margin: auto;
     max-width: 100%;
-    padding: calc(var(--lg-spacing)*3) var(--default-spacing)  calc(var(--default-spacing)) var(--default-spacing);
-    position: relative;
+    padding: var(--default-spacing)  calc(var(--default-spacing)) var(--default-spacing);
+}
+
+.form-container {
+    padding-top: calc(var(--lg-spacing)*3);
+}
+
+.disabled input,
+.disabled select {
+    border-color: var(--place-holder)!important;
+    background-color: var(--light-grey)!important;
+    cursor: not-allowed;
+}
+
+.disabled label,
+.disabled select {
+    color: var(--place-holder)!important;
+}
+
+.disabled .card__front,
+.disabled .card__back {
+    background: var(--place-holder) !important;
 }
 
 .input-group:not(:last-child) {

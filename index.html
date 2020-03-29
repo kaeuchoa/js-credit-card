@@ -16,13 +16,16 @@
         <div id="cart-list-container">
 
             <section id="cart-list">
+                <div class="panel">
+
+                </div>
 
             </section>
 
         </div>
 
 
-        <div id="form-container">
+        <div id="form-container" class="disabled">
 
             <section id="card">
                 <div class="card js-card">
@@ -76,26 +79,26 @@
             </section>
     
             <section id="form">
-                <form class="form-container" id="card-form">
+                <form class="form-container panel" id="card-form">
                     <!-- Card Number Group -->
                     <div class="input-group">
                         <label for="card-number">Card Number</label>
-                        <input type="number" name="card-number" class="input--block" id="card-number">
+                        <input disabled type="number" name="card-number" class="input--block" id="card-number">
                     </div>
     
                     <!-- Card Name Group -->
                     <div class="input-group">
                         <label for="card-holder">Card Holder</label>
-                        <input type="text" name="card-holder" class="input--block" id="card-holder">
+                        <input disabled type="text" name="card-holder" class="input--block" id="card-holder">
                     </div>
     
                     <!-- Expiration Date Group -->
                     <div class="input-group input-group--inline form__exp-date">
                         <label for="expiration-date-month expiration-date-year">Expiration Date</label>
-                        <select name="expiration-date-month" id="expiration-date-month">
+                        <select disabled name="expiration-date-month" id="expiration-date-month">
                             <option value="">Month</option>
                         </select>
-                        <select name="expiration-date-year" id="expiration-date-year">
+                        <select disabled name="expiration-date-year" id="expiration-date-year">
                             <option value="">Year</option>
                             <option value="2020">2020</option>
     
@@ -105,10 +108,10 @@
                     <!-- Security Number Group -->
                     <div class="input-group input-group--inline form__security-number">
                         <label for="security-number">CVV</label>
-                        <input type="number" name="security-number" id="security-number" maxlength="3">
+                        <input disabled type="number" name="security-number" id="security-number" maxlength="3">
                     </div>
     
-                    <input type="submit" class="btn btn--confirm btn--block" value="submit">
+                    <input disabled type="submit" class="btn btn--confirm btn--block" value="submit">
                 </form>
             </section>
         </div>
