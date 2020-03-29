@@ -5,7 +5,7 @@
 
     --container-sm-width: 500px;
     --container-md-width: 800px;
-    --container-lg-width: 1000px;
+    --container-lg-width: 1200px;
 
     --default-spacing: 20px;
     --sm-spacing: calc(var(--default-spacing)/2);
@@ -23,6 +23,14 @@ body {
     background-color: var(--light-grey);
     font-family: sans-serif;
     font-size: 14px;
+}
+
+#cart-list-container, 
+#form-container {
+    width: 48%;
+    margin-right: 1%; 
+    height: 100%;
+    display: inline-block;
 }
 
 input:focus, 
@@ -275,15 +283,5 @@ p {
 @media screen and (min-width: 768px) {
     .container {
         max-width: var(--container-lg-width);
-    }
-
-    .form-container {
-        max-width: 60%;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .form-container {
-        max-width: 50%;
     }
 }

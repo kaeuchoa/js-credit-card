@@ -13,93 +13,106 @@
 </head>
 <body>
     <main class="container">
-        <section id="card">
-            <div class="card js-card">
-                <div id="card-focus" class="card--overlay">
-                    <div class="card--focus js-focusBox"></div>
-                </div>
-                <div class="card__front">
-                    <div class="card-header">
-                        <span class="card__seal"></span>
-                        <span class="card__flag"></span>
+        <div id="cart-list-container">
+
+            <section id="cart-list">
+
+            </section>
+
+        </div>
+
+
+        <div id="form-container">
+
+            <section id="card">
+                <div class="card js-card">
+                    <div id="card-focus" class="card--overlay">
+                        <div class="card--focus js-focusBox"></div>
                     </div>
-                    <div class="card__number place-holder" data-input-bind="number" data-place-holder="#### #### #### ####" data-focus-target="card-number">
-                        <span class="card__number__group">####</span>
-                        <span class="card__number__group">####</span>
-                        <span class="card__number__group">####</span>
-                        <span class="card__number__group">####</span>
-                    </div>
-                    <div class="card-footer">
-                        <!-- Semanticaly how would this be labeled? -->
-                        <div class="card__data">
-                            <p class="card__label">Card Holder</p>
-                            <p class="place-holder" data-input-bind="holder" data-focus-target="card-holder" data-place-holder="Place Holder Name" >Place Holder Name</p>
+                    <div class="card__front">
+                        <div class="card-header">
+                            <span class="card__seal"></span>
+                            <span class="card__flag"></span>
                         </div>
-                        <div class="card__data">
-                            <p class="card__label">Expires</p>
-                            <div>
-                                <span class="place-holder" data-input-bind="expirationMonth" data-focus-target="expiration-date-month" data-place-holder="MM">MM</span>/
-                                <span class="place-holder" data-input-bind="expirationYear" data-focus-target="expiration-date-year" data-place-holder="YYYY">YYYY</span>
+                        <div class="card__number place-holder" data-input-bind="number" data-place-holder="#### #### #### ####" data-focus-target="card-number">
+                            <span class="card__number__group">####</span>
+                            <span class="card__number__group">####</span>
+                            <span class="card__number__group">####</span>
+                            <span class="card__number__group">####</span>
+                        </div>
+                        <div class="card-footer">
+                            <!-- Semanticaly how would this be labeled? -->
+                            <div class="card__data">
+                                <p class="card__label">Card Holder</p>
+                                <p class="place-holder" data-input-bind="holder" data-focus-target="card-holder" data-place-holder="Place Holder Name" >Place Holder Name</p>
+                            </div>
+                            <div class="card__data">
+                                <p class="card__label">Expires</p>
+                                <div>
+                                    <span class="place-holder" data-input-bind="expirationMonth" data-focus-target="expiration-date-month" data-place-holder="MM">MM</span>/
+                                    <span class="place-holder" data-input-bind="expirationYear" data-focus-target="expiration-date-year" data-place-holder="YYYY">YYYY</span>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="card__back">
+                        <div class="card-header">
+                            <span class="card__swipe">
+                            </span>
+                        </div>
+        
+                        <div class="card__data card__security">
+                            <p class="card__label">CVV</p>
+                            <p class="card__security__number place-holder" data-input-bind="securityNumber" data-focus-target="security-number" data-place-holder="***">***</p>
+                        </div>
+        
+                        <div class="card-footer">
+                            <span class="card__flag"></span>
+                        </div>
+        
+                    </div>
                 </div>
-                <div class="card__back">
-                    <div class="card-header">
-                        <span class="card__swipe">
-                        </span>
+                
+            </section>
+    
+            <section id="form">
+                <form class="form-container" id="card-form">
+                    <!-- Card Number Group -->
+                    <div class="input-group">
+                        <label for="card-number">Card Number</label>
+                        <input type="number" name="card-number" class="input--block" id="card-number">
                     </div>
     
-                    <div class="card__data card__security">
-                        <p class="card__label">CVV</p>
-                        <p class="card__security__number place-holder" data-input-bind="securityNumber" data-focus-target="security-number" data-place-holder="***">***</p>
+                    <!-- Card Name Group -->
+                    <div class="input-group">
+                        <label for="card-holder">Card Holder</label>
+                        <input type="text" name="card-holder" class="input--block" id="card-holder">
                     </div>
     
-                    <div class="card-footer">
-                        <span class="card__flag"></span>
+                    <!-- Expiration Date Group -->
+                    <div class="input-group input-group--inline form__exp-date">
+                        <label for="expiration-date-month expiration-date-year">Expiration Date</label>
+                        <select name="expiration-date-month" id="expiration-date-month">
+                            <option value="">Month</option>
+                        </select>
+                        <select name="expiration-date-year" id="expiration-date-year">
+                            <option value="">Year</option>
+                            <option value="2020">2020</option>
+    
+                        </select>
                     </div>
     
-                </div>
-            </div>
-            
-        </section>
+                    <!-- Security Number Group -->
+                    <div class="input-group input-group--inline form__security-number">
+                        <label for="security-number">CVV</label>
+                        <input type="number" name="security-number" id="security-number" maxlength="3">
+                    </div>
+    
+                    <input type="submit" class="btn btn--confirm btn--block" value="submit">
+                </form>
+            </section>
+        </div>
 
-        <section id="form">
-            <form class="form-container" id="card-form">
-                <!-- Card Number Group -->
-                <div class="input-group">
-                    <label for="card-number">Card Number</label>
-                    <input type="number" name="card-number" class="input--block" id="card-number">
-                </div>
-
-                <!-- Card Name Group -->
-                <div class="input-group">
-                    <label for="card-holder">Card Holder</label>
-                    <input type="text" name="card-holder" class="input--block" id="card-holder">
-                </div>
-
-                <!-- Expiration Date Group -->
-                <div class="input-group input-group--inline form__exp-date">
-                    <label for="expiration-date-month expiration-date-year">Expiration Date</label>
-                    <select name="expiration-date-month" id="expiration-date-month">
-                        <option value="">Month</option>
-                    </select>
-                    <select name="expiration-date-year" id="expiration-date-year">
-                        <option value="">Year</option>
-                        <option value="2020">2020</option>
-
-                    </select>
-                </div>
-
-                <!-- Security Number Group -->
-                <div class="input-group input-group--inline form__security-number">
-                    <label for="security-number">CVV</label>
-                    <input type="number" name="security-number" id="security-number" maxlength="3">
-                </div>
-
-                <input type="submit" class="btn btn--confirm btn--block" value="submit">
-            </div>
-        </section>
     </main>
 </body>
 </html>
