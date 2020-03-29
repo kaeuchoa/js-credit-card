@@ -1,0 +1,29 @@
+
+/* Mobile First */
+.container {
+    margin: auto;
+    max-width: var(--container-sm-width);
+    min-height: 200px;
+    position: relative;
+    width: 100%;
+}
+
+@media screen and (min-width: 576px) {
+    .container {
+        max-width: var(--container-md-width);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: var(--container-lg-width);
+    }
+
+    #cart-list-container, 
+    #form-container {
+        display: inline-block;
+        height: 100%;
+        margin-right: 1%; 
+        width: 48%;
+    }
+}

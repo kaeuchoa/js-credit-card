@@ -1,0 +1,31 @@
+
+.place-holder {
+    color: var(--place-holder);
+    background-color: rgba(125, 125, 125, 0.3);
+} 
+
+.panel {
+    background-color: #fff;
+    border-radius: var(--default-border-radius);
+    box-shadow: var(--default-box-shadow);
+    margin: auto;
+    max-width: 100%;
+    padding: var(--default-spacing)  calc(var(--default-spacing)) var(--default-spacing);
+}
+
+.disabled input,
+.disabled select {
+    border-color: var(--place-holder)!important;
+    background-color: var(--light-grey)!important;
+    cursor: not-allowed;
+}
+
+.disabled label,
+.disabled select {
+    color: var(--place-holder)!important;
+}
+
+.disabled .card__front,
+.disabled .card__back {
+    background: var(--place-holder) !important;
+}

@@ -1,0 +1,142 @@
+.card__seal,
+.card__flag {
+    background-color: #fff;
+    height: 30px;
+    width: 50px;
+}
+
+.card {
+    border-radius: var(--default-border-radius);
+    box-shadow: var(--default-box-shadow);
+    height: 220px;
+    margin: auto;
+    position: relative;
+    top: calc(var(--lg-spacing)*2);
+    transform-style: preserve-3d;
+    transition: transform .8s;
+    width: 350px;
+    z-index: 2;
+}
+
+.card--overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(255,255,255, .4); */
+    box-shadow: var(--default-box-shadow);
+    z-index: 8;
+    /* display: none; */
+}
+
+.card--focus {
+    border-radius: var(--default-border-radius);
+    border: #fff solid 1px;
+    box-shadow: var(--default-box-shadow);
+    box-sizing: border-box;
+    display: none;
+    height: 1px;
+    left: 0;
+    padding: 3px;
+    position: absolute;
+    top: 0;
+    transition: all .3s ease-in;
+    width: 1px;
+    z-index: 9;
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card,
+.card-header,
+.card-footer,
+.card__front,
+.card__back,
+.card__data {
+    display: flex;
+}
+
+.card-header,
+.card-footer {
+    flex-grow: 1;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card-header {
+    align-self: flex-start;
+}
+
+.card-footer,
+.card__data {
+    align-self: flex-end;
+}
+
+.card__front,
+.card__back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: -webkit-linear-gradient(to right, #4389A2, #5C258D);
+    background: #5C258D;
+    background: linear-gradient(to right, #4389A2, #5C258D);
+    border-radius: inherit;
+    box-sizing: border-box;
+    color: #fff;
+    flex-direction: column;
+    height: 100%;
+    margin-bottom: var(--sm-spacing);
+    padding: var(--default-spacing);
+    position: absolute;
+    width: 100%;
+}
+
+.card__back {
+    transform: rotateY(180deg);
+}
+
+.card__back .card-footer {
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.card__number {
+    padding: var(--sm-spacing);
+}
+
+.card__data {
+    flex-direction: column;
+}
+
+.card__label {
+    font-size: .75rem;
+    margin: .2rem 0;
+}
+
+
+.card__data.card__security {
+    width: 100%;
+}
+
+.card__swipe {
+    background-color: #000;
+    left: 0;
+    min-height: var(--min-clickable-height);
+    position: absolute;
+    top: var(--default-spacing);
+    width: 100%;
+}
+
+.card__security__number {
+    background-color: #fff;
+    border-radius: var(--default-border-radius);
+    box-sizing: border-box;
+    color: #333;
+    min-height: var(--min-clickable-height);
+    padding: var(--sm-spacing);
+}
+
+.card__security .card__security__number,
+.card__security .card__label {
+    text-align: right;
+}

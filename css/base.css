@@ -1,0 +1,85 @@
+:root {
+    --light-grey: #eee;
+    --place-holder: #c3c3c3;
+    --primary-color: #2196f3;
+
+    --container-sm-width: 500px;
+    --container-md-width: 800px;
+    --container-lg-width: 1200px;
+
+    --default-spacing: 20px;
+    --sm-spacing: calc(var(--default-spacing)/2);
+    --xs-spacing: calc(var(--sm-spacing)/2);
+    --lg-spacing: calc(var(--default-spacing)*2);
+
+    --default-border-radius: 5px;
+    /* Min-height considered for mobile confortable clicks */
+    --min-clickable-height: 32px;
+
+    --default-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .4);
+}
+
+body {
+    background-color: var(--light-grey);
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+p {
+    margin: 0;
+}
+
+input:focus, 
+select:focus {
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.input-group:not(:last-child) {
+    margin: 0 0 var(--sm-spacing) 0;
+}
+
+.input-group label {
+    display: block;
+}
+
+.input-group input,
+.input-group select,
+.btn {
+    border-radius: var(--default-border-radius);
+    border: 1px solid #a3a3a3;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    min-height: var(--min-clickable-height);
+    padding: 0 var(--sm-spacing);
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    box-shadow: 0px 0px 5px 0px var(--primary-color);
+}
+
+.input--block {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.input-group--inline {
+    display: inline-block;
+}
+
+.btn {
+    border: none;
+    text-transform: uppercase;
+}
+
+.btn--confirm {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn--block {
+    display: block;
+    width: 100%;
+}
