@@ -25,14 +25,53 @@
         <div id="checkout-list-container">
 
             <section id="checkout-list">
-                <div class="panel">
+                <div class="panel panel--not-focused">
                     <div class="checkout-img">
-                        <div class="img-placeholder"></div>
+                        <img src="imgs/checkout.svg"></img>
                     </div>
                     
                     <h2 class="checkout-title">Summary</h2>
 
                     <ul class="checkout-fields">
+                        <li class="checkout-field">
+                            <div class="field__title">
+                                <span class="field__icon">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </span>
+                                <h3>Items</h3>
+                            </div>
+
+                            <div class="field__data">
+                                <ul>
+                                    <li class="checkout-item">
+                                        <span class="checkout__amount">( 2x )</span><span>Item 1</span>
+                                        <span class="checkout__hr"></span>
+                                        <div class="checkout-value-container">
+                                            <span class="checkout-item__cur">$</span>
+                                            <span class="checkout-item__val">50,00</span>
+                                        </div>
+                                    </li>
+
+                                    <li class="checkout-item">
+                                        <span class="checkout__amount">( 1x )</span><span>Item 2</span>
+                                        <span class="checkout__hr"></span>
+                                        <div class="checkout-value-container">
+                                            <span class="checkout-item__cur">$</span>
+                                            <span class="checkout-item__val">100,00</span>
+                                        </div>
+                                    </li>
+
+                                    <li class="checkout-item">
+                                        <span class="checkout__amount">( 4x )</span><span>Item 3</span>
+                                        <span class="checkout__hr"></span>
+                                        <div class="checkout-value-container">
+                                            <span class="checkout-item__cur">$</span>
+                                            <span class="checkout-item__val">25,00</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
                         <li class="checkout-field">
                             <div class="field__title">
                                 <span class="field__icon">
@@ -43,9 +82,35 @@
 
                             <div class="field__data">
                                 <span  class="field__text">Some address here</span>
-                                <button type="button" class="btn btn--small">Edit <i class="fas fa-chevron-right field__icon"></i></span>
+                                <button type="button" class="btn btn--small">Edit <i class="fas fa-chevron-right"></i></span>
                             </div>
+                        </li>
+
+                        <li class="checkout-field checkout-field--active">
+                            <div class="field__title">
+                                <span class="field__icon">
+                                    <i class="fas fa-credit-card"></i>
+                                </span>
+                                <h3>Payment</h3>
+                            </div>
+
+                            <div class="field__data">
+                                <span  class="field__text field__text--empty">Add a payment mode</span>
+                                <button type="button" class="btn btn--small">Add <i class="fas fa-chevron-right"></i></span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <hr>
+
+                    <div class="checkout-item">
+                        <span class="total__label">Total</span>
+                        <span class="checkout__hr"></span>
+                        <div class="checkout-item-container">
+                            <span class="checkout-item__cur total__currency">$</span>
+                            <span class="checkout-item__cur total__value">300,00</span>
                         </div>
+                        
                     </div>
 
                 </div>
@@ -57,7 +122,7 @@
         </div>
 
 
-        <div id="form-container" class="disabled">
+        <div id="form-container">
 
             <section id="card">
                 <div class="card js-card">
@@ -115,22 +180,22 @@
                     <!-- Card Number Group -->
                     <div class="input-group">
                         <label for="card-number">Card Number</label>
-                        <input disabled type="number" name="card-number" class="input--block" id="card-number">
+                        <input type="number" name="card-number" class="input--block" id="card-number">
                     </div>
     
                     <!-- Card Name Group -->
                     <div class="input-group">
                         <label for="card-holder">Card Holder</label>
-                        <input disabled type="text" name="card-holder" class="input--block" id="card-holder">
+                        <input type="text" name="card-holder" class="input--block" id="card-holder">
                     </div>
     
                     <!-- Expiration Date Group -->
                     <div class="input-group input-group--inline form__exp-date">
                         <label for="expiration-date-month expiration-date-year">Expiration Date</label>
-                        <select disabled name="expiration-date-month" id="expiration-date-month">
+                        <select name="expiration-date-month" id="expiration-date-month">
                             <option value="">Month</option>
                         </select>
-                        <select disabled name="expiration-date-year" id="expiration-date-year">
+                        <select name="expiration-date-year" id="expiration-date-year">
                             <option value="">Year</option>
                             <option value="2020">2020</option>
     
@@ -140,10 +205,10 @@
                     <!-- Security Number Group -->
                     <div class="input-group input-group--inline form__security-number">
                         <label for="security-number">CVV</label>
-                        <input disabled type="number" name="security-number" id="security-number" maxlength="3">
+                        <input type="number" name="security-number" id="security-number" maxlength="3">
                     </div>
     
-                    <input disabled type="submit" class="btn btn--primary btn--block" value="submit">
+                    <input type="submit" class="btn btn--primary btn--block" value="submit">
                 </form>
             </section>
         </div>

@@ -20,6 +20,11 @@
     padding: var(--default-spacing)  calc(var(--default-spacing)) var(--default-spacing);
 }
 
+.panel--not-focused {
+    box-shadow: none;
+    background-color: #f9f9f9;
+}
+
 .disabled input,
 .disabled select {
     border-color: var(--place-holder)!important;
