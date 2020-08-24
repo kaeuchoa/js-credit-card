@@ -1,6 +1,6 @@
 .card__seal,
 .card__flag {
-    background-color: #fff;
+    background: #c2c2c2;
     height: 30px;
     width: 50px;
 }

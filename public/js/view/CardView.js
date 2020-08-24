@@ -2,6 +2,7 @@ const CardView = () => {
     let _view = {
         init: function() {
             this.element = document.querySelector(".js-card");
+            this.flag = document.querySelector(".js-cardFlag");
             this.focusBox = this.element.querySelector(".js-focusBox");
             return this;
         },
@@ -32,6 +33,11 @@ const CardView = () => {
             _view.focusBox.style.top = `${focusTarget.offsetTop - 5}px`;
             _view.focusBox.style.left = `${focusTarget.offsetLeft - 5}px`;
 
+        },
+        
+        updateFlagImg: function(imgPath) {
+            this.flag.style.background = `url(${imgPath}) no-repeat center center`;
+            this.flag.style.backgroundSize = "100%";
         }
 
     };
