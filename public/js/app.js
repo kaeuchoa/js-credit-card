@@ -12,7 +12,7 @@ const app = (function(){
         const cardForm = CardFormView(card);
         cardForm.inputNumber.on("focus", cardView.moveFocusBox);
         cardForm.inputNumber.on("blur", () => {
-            cardService.getFlag();
+            cardService.getFlag().then(data => console.log(data));
         });
         cardForm.inputHolder.onFocus(cardView.moveFocusBox);
         cardForm.selectMonth.onFocus(cardView.moveFocusBox);

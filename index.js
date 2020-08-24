@@ -9,5 +9,9 @@ app.listen(port, () => {
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.sendStatus(200);
-})
+    res.sendFile("index.html");
+});
+
+app.post('/card', (req, res) => {
+    res.send({"msg": "it works"});
+});
