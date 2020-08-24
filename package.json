@@ -4,7 +4,9 @@
   "description": "small js project to practice data binding",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index.js",
+    "ui": "browser-sync start --proxy=localhost:8000 --files='**/*.css, **/*.js' --ignore=node_modules --reload-delay 10 --no-ui --no-notify"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
   },
   "homepage": "https://github.com/kaeuchoa/js-credit-card#readme",
   "devDependencies": {
+    "browser-sync": "^2.26.12",
     "nodemon": "^2.0.4"
   },
   "dependencies": {
