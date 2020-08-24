@@ -13,10 +13,10 @@ const CardFormView = (cardModel) => {
 
             return {
                 el: this.inputNumber,
-                onFocus: function(...callbacks){
-                    callbacks.forEach(callback => {
-                        this.el.addEventListener("focus", callback);
-                    });
+                on: function(event, callback){
+                    this.el.addEventListener(event, callback);
+                    // callbacks.forEach(callback => {
+                    // });
                 }
             }
         },

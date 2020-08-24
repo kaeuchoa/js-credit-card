@@ -1,4 +1,5 @@
 const app = (function(){
+    let cardService = new CardFlagService();
     function initApp() {
         let cardView = CardView();
         let card = Bind(CardModel(), cardView, 
@@ -9,7 +10,10 @@ const app = (function(){
                         "expirationYear");
 
         const cardForm = CardFormView(card);
-        cardForm.inputNumber.onFocus(cardView.moveFocusBox);
+        cardForm.inputNumber.on("focus", cardView.moveFocusBox);
+        cardForm.inputNumber.on("blur", () => {
+            cardService.getFlag();
+        });
         cardForm.inputHolder.onFocus(cardView.moveFocusBox);
         cardForm.selectMonth.onFocus(cardView.moveFocusBox);
         cardForm.selectYear.onFocus(cardView.moveFocusBox);
