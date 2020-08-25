@@ -15,6 +15,9 @@ const CardFormView = (cardModel) => {
                 el: this.inputNumber,
                 on: function(event, callback){
                     this.el.addEventListener(event, callback);
+                },
+                value: function() {
+                    return this.el.value;
                 }
             }
         },

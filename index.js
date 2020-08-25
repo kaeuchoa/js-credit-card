@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 var bodyParser = require('body-parser');
 const port = process.env.PORT || "8000";
+const creditCardType = require("credit-card-type");
 
 app.listen(port, () => {
     console.log('server running on http://localhost:' + port);
@@ -17,15 +18,6 @@ app.get('/', (req, res) => {
 
 app.post('/card', (req, res) => {
     let cardNumber = req.body.cardNumber;
-    // replace with https://github.com/braintree/credit-card-type
-    let data = {};
-    switch (cardNumber) {
-        case 1: 
-            data.type = "VISA";
-            break;
-        case 2:
-            data.type = "MASTER";
-            break;
-    }
-    res.send(data);
+    let [cardData] = creditCardType(cardNumber);
+    res.send(cardData);
 });

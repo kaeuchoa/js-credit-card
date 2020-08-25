@@ -11,7 +11,9 @@ const app = (function(){
 
         const cardForm = CardFormView(card);
         cardForm.inputNumber.on("focus", cardView.moveFocusBox);
-        cardForm.inputNumber.on("blur", updateCardFlag);
+        cardForm.inputNumber.on("blur", () => {
+            updateCardFlag(cardForm.inputNumber.value());
+        });
         cardForm.inputHolder.onFocus(cardView.moveFocusBox);
         cardForm.selectMonth.onFocus(cardView.moveFocusBox);
         cardForm.selectYear.onFocus(cardView.moveFocusBox);
@@ -19,20 +21,22 @@ const app = (function(){
         cardForm.inputSecNum.onBlur(cardView.flipCard);
     }
 
-    const updateCardFlag = () => {
-        // load state to flag
-        cardService.getFlag().then(data => {
-            let path = "/imgs/";
-            switch (data.type) {
-                case "VISA":
-                    path += "visa_logo.svg";
-                    break;
-                case "MASTER":
-                    path += "master_logo.svg";
-                    break;
-            }
-            cardView.updateFlagImg(path);
-        });
+    const updateCardFlag = (cardNumber) => {
+        // bins credit cards https://gist.github.com/erikhenrique/5931368
+        if (cardNumber.length >= 4) {
+            cardService.getFlag(cardNumber).then(data => {
+                let path = "/imgs/";
+                switch (data.type) {
+                    case "visa":
+                        path += "visa_logo.svg";
+                        break;
+                    case "mastercard":
+                        path += "master_logo.svg";
+                        break;
+                }
+                cardView.updateFlagImg(path);
+            });
+        }
     }
 
     return {

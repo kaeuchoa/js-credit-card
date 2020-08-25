@@ -37,7 +37,7 @@ const CardView = () => {
         
         updateFlagImg: function(imgPath) {
             this.flag.style.background = `url(${imgPath}) no-repeat center center`;
-            this.flag.style.backgroundSize = "100%";
+            this.flag.style.backgroundSize = "contain";
         }
 
     };
