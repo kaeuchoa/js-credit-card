@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./index.js",
-    "ui": "browser-sync start --proxy=localhost:8000 --files='**/*.css, **/*.js' --ignore=node_modules --reload-delay 10 --no-ui --no-notify"
+    "start": "nodemon ./index.js"
   },
   "repository": {
     "type": "git",
@@ -15,7 +14,8 @@
   "keywords": [
     "js",
     "data-bind",
-    "vanilla"
+    "vanilla",
+    "css"
   ],
   "author": "kaeuchoa",
   "license": "ISC",
@@ -28,6 +28,7 @@
     "nodemon": "^2.0.4"
   },
   "dependencies": {
+    "credit-card-type": "^9.0.1",
     "express": "^4.17.1"
   }
 }
