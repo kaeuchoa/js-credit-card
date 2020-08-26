@@ -11,7 +11,7 @@ const app = (function(){
 
         const cardForm = CardFormView(card);
         cardForm.inputNumber.on("focus", cardView.moveFocusBox);
-        cardForm.inputNumber.on("blur", () => {
+        cardForm.inputNumber.on("keyup", () => {
             updateCardFlag(cardForm.inputNumber.value());
         });
         cardForm.inputHolder.onFocus(cardView.moveFocusBox);
