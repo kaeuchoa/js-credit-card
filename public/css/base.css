@@ -66,6 +66,14 @@ select:focus {
     padding: 0 var(--sm-spacing);
 }
 
+.input-group input {
+    width: 100%;
+}
+
+.input-group select + select {
+    margin-top: var(--sm-spacing);
+}
+
 .input-group input:focus,
 .input-group select:focus {
     box-shadow: 0px 0px 5px 0px var(--primary-color);
@@ -78,6 +86,12 @@ select:focus {
 
 .input-group--inline {
     display: inline-block;
+}
+
+@media screen and (min-width: 960px) {
+    .input-group select + select {
+        margin-top: 0;
+    }
 }
 
 .btn {

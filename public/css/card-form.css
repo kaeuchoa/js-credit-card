@@ -1,17 +1,28 @@
 
-.form__exp-date {
-    width: 50%;
+.form__exp-date,
+.form__exp-date select,
+.form__security-number {
+    width: 100%;
 }
 
 .form__exp-date select {
-    width: 49%;
     background-color: #fff;
-}
-
-.form__security-number {
-    float: right;
 }
 
 .form-container {
     padding-top: calc(var(--lg-spacing)*3);
+}
+
+@media screen and (min-width: 960px) {
+    .form__exp-date {
+        width: 50%;
+    }
+    .form__exp-date select,
+    .form__security-number {
+        width: 49%;
+    }
+    
+    .form__security-number {
+        float: right;
+    }
 }
