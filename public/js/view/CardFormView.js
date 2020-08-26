@@ -55,7 +55,7 @@ const CardFormView = (cardModel) => {
             }
 
             this.selectMonth.addEventListener("change", () => {
-                this.cardModel.selectMonth = this.selectMonth.value;
+                this.cardModel.expirationMonth = this.selectMonth.value;
             });
 
             return {
@@ -79,7 +79,7 @@ const CardFormView = (cardModel) => {
             }
 
             this.selectYear.addEventListener("change", () => {
-                this.cardModel.selectYear = this.selectYear.value;
+                this.cardModel.expirationYear = this.selectYear.value;
             });
 
             return {
